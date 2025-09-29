@@ -1,0 +1,56 @@
+/* ========================================
+   ESTILOS EXCLUSIVOS PÁGINA CRIADORES
+   ======================================== */
+
+/* Container que organiza os cards em um grid responsivo */
+.container-criadores {
+    display: grid;
+    /* Cria colunas flexíveis: no mínimo 250px, se couber mais, elas se ajustam */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Espaçamento entre os cards */
+    padding-top: 20px;
+}
+
+/* Estilo individual de cada card de criador */
+.card-criador {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 4px solid #88a5ab; /* Detalhe com a cor de destaque da sua paleta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-criador:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* A MÁGICA DA FOTO CIRCULAR */
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Isso transforma a imagem em um círculo perfeito */
+    object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+    margin-bottom: 20px;
+    border: 4px solid #b8dbd9; /* Cor da borda que combina com seu header/footer */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilo para o nome do criador */
+.nome-criador {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #2F4550; /* Cor escura principal da sua paleta */
+}
+
+/* Estilo para a descrição da carreira */
+.descricao-criador {
+    font-size: 0.9em;
+    color: #555; /* Cor padrão de parágrafo */
+    line-height: 1.5;
+    margin-top: 10px;
+    min-height: 80px; /* Define uma altura mínima para alinhar melhor os cards */
+}

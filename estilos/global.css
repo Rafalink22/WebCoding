@@ -1,0 +1,261 @@
+/* ========================================
+   1. ESTILOS GERAIS E RESET (GLOBAIS)
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F4F4F9; /* Cor de fundo padrão para todas as páginas */
+}
+
+/* ========================================
+   2. NAVEGAÇÃO (HEADER - GLOBAL)
+   ======================================== */
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-color: #b8dbd9;
+    padding: 10px 0;
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+header nav a {
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #f4f4f97c;
+}
+
+/* ========================================
+   3. COMPONENTES (BOTÕES - GLOBAIS)
+   ======================================== */
+.btn {
+    background-color: #2F4550;
+    color: #F4F4F9;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 50px;
+    margin: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btn:hover {
+    background-color: #3f3f3f;
+}
+
+/* ========================================
+   4. RODAPÉ (FOOTER - GLOBAL)
+   ======================================== */
+.site-footer {
+    background-color: #b8dbd9;
+    color: #000000;
+    padding-top: 40px;
+    font-size: 15px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.footer-column h4 {
+    color: #000000;
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #F4F4F9;
+}
+
+.footer-column p {
+    line-height: 1.7;
+}
+
+.footer-column .academic-context {
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.footer-nav {
+    list-style: none;
+}
+
+.footer-nav-column li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: #445a66;
+    text-decoration: none;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #F4F4F9;
+    padding-left: 5px;
+}
+
+.footer-bottom-bar {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #88a5ab;
+    font-size: 14px;
+    color: #F4F4F9;
+}
+
+/* O container que vai alinhar as colunas */
+.footer-nav-container {
+    display: flex; /* A mágica acontece aqui! */
+    justify-content: flex-start; /* Alinha as colunas à esquerda */
+    gap: 40px; /* Cria um espaço horizontal entre as duas colunas */
+}
+
+/* Estilo para ambas as colunas de links */
+.footer-nav-column {
+    list-style: none; /* Remove os pontinhos da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-column a {
+    color: #445a66;
+    text-decoration: none;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-nav-column a:hover {
+    color: #F4F4F9;
+    padding-left: 5px;
+}
+
+.footer-nav-column li {
+    margin-bottom: 10px;
+}
+
+/* ========================================
+   5. MENU DROPDOWN (HEADER - GLOBAL)
+   ======================================== */
+
+/* Container principal do item do menu que terá o dropdown */
+.dropdown {
+    position: relative; /* Essencial para posicionar o menu que vai abrir */
+}
+
+/* O conteúdo do dropdown (que fica escondido por padrão) */
+.dropdown-content {
+    display: none; /* Esconde o menu por padrão */
+    position: absolute; /* Permite que o menu flutue sobre o conteúdo da página */
+    top: 100%; /* Posiciona o menu logo abaixo do item "Conteúdos" */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o dropdown em relação ao item pai */
+    background-color: #F4F4F9;
+    min-width: 400px; /* Largura mínima do container do dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    z-index: 100; /* Garante que o menu fique na frente de outros elementos */
+    padding: 20px;
+    margin-top: 10px; /* Pequeno espaço entre o menu e o dropdown */
+    border-bottom: 4px solid #88a5ab; /* Detalhe com a cor de destaque do site */
+    
+    /* Novo: Usando flex para alinhar as colunas lado a lado */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre as duas colunas */
+
+    /* Transição suave para aparecer */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Mostra o dropdown quando o mouse passa por cima do item do menu */
+.dropdown:hover .dropdown-content {
+    display: flex; /* Muda para flex para que as colunas apareçam */
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo para as colunas dentro do dropdown */
+.dropdown-column {
+    background-color: #F4F4F9;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para os links dentro do dropdown */
+.dropdown-content a {
+    color: #445a66; /* Cor de texto suave */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Faz o link ocupar todo o espaço do 'li' */
+    text-align: left;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+}
+
+/* Efeito hover para os links do dropdown */
+.dropdown-content a:hover {
+    background-color: #B8DBD9; /* Fundo alternativo que já usamos no site */
+    color: #2f4550;
+}
+
+/* ========================================
+   6. RESPONSIVIDADE (GLOBAL)
+   ======================================== */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        max-width: 100%;
+    }
+
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

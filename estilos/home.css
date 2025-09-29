@@ -1,0 +1,149 @@
+/* ========================================
+   1. TÍTULOS (EXCLUSIVO HOME)
+   ======================================== */
+.titulo {
+    text-align: center;
+    margin: 20px;
+}
+
+.sub-titulo {
+    text-align: center;
+    margin: 10px;
+}
+
+/* ========================================
+   2. SLIDER / CARROSSEL (EXCLUSIVO HOME)
+   ======================================== */
+.slider-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 75px;
+    padding: 0 40px;
+}
+
+.slider-container {
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #2F4550;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-button.prev {
+    left: 0;
+}
+
+.slider-button.next {
+    right: 0;
+}
+
+.slider-button.hidden {
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 345px;
+    height: 500px;
+    margin: 50px 15px;
+    background-color: rgb(230, 230, 230);
+    color: #202020;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    text-align: center;
+}
+
+.card-content {
+    flex-grow: 1;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card h1 {
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.card p {
+    font-size: 17px;
+    padding: 15px 0;
+}
+
+.card > a > img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card .card-image-link {
+    display: block;
+    font-size: 0;
+}
+
+.card .card-button-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.card .card-button-link .btn {
+    color: #fff;
+    pointer-events: none;
+}
+
+/* ========================================
+   3. RESPONSIVIDADE (EXCLUSIVO HOME)
+   ======================================== */
+@media (max-width: 768px) {
+    .slider-wrapper {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 30px 5%;
+        height: auto;
+    }
+
+    .slider-button {
+        width: 40px;
+        height: 40px;
+        top: 40%;
+    }
+
+    .slider-button.prev {
+        left: -5px;
+    }
+
+    .slider-button.next {
+        right: -5px;
+    }
+}
