@@ -217,3 +217,22 @@ main p {
     color: #555; /* Cor secundária de texto */
     line-height: 1.5;
 }
+
+.sub-titulo-grafico {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.container-texto-analise h2 {
+    margin-bottom: 20px; 
+}
+
+.container-texto-analise h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.container-texto-analise p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}

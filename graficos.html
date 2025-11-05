@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Interativo - Dados de Tecnologia</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon_uninassau.ico">
+
+    <link rel="stylesheet" href="estilos/global.css">
+    <link rel="stylesheet" href="estilos/pages.css">
+    <link rel="stylesheet" href="estilos/graficos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="nav1">
+            <ul class="ul-nav">
+                <li class="navs li1"><a href="index.html">Início</a></li>
+                <li class="navs li2 dropdown">
+                    <a href="#">Conteúdos</a>
+                    <div class="dropdown-content">
+                        <ul class="dropdown-column">
+                            <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="redes-sociais.html">Redes Sociais</a></li>
+                            <li><a href="design.html">Design</a></li>
+                        </ul>
+                        <ul class="dropdown-column">
+                            <li><a href="e-commerce.html">E-Commerce</a></li>
+                            <li><a href="direito.html">Direito</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navs li4 dropdown">
+                    <a href="#">Ensino Básico</a>
+                    <div class="dropdown-content">
+                        <ul class="dropdown-column">
+                            <li><a href="#">Análise e Discussão</a></li>
+                            <li><a href="graficos.html">Gráficos</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navs li3"><a href="criadores.html">Quem somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="secao-introducao">
+            <div class="caixa-foco">
+                <h1>Gráficos Interativos</h1>
+                <p class="sub-titulo-grafico">Explore os dados sobre a tecnologia no Ensino Básico em Maceió.</p>
+                <p class="sub-titulo-grafico">Clique em um gráfico abaixo para vê-lo em destaque e ler mais sobre seu impacto social.</p>
+            </div>
+        </section>
+
+        <section id="area-destaque" class="secao-conteudo" style="display: none;">
+            <div id="grafico-destaque-container">
+                <canvas id="grafico-em-destaque"></canvas>
+            </div>
+            <div id="filtro-destaque-container">
+                </div>
+            <div id="descricao-destaque-container">
+                </div>
+        </section>
+
+        <section class="secao-conteudo">
+            <h2>Análise de Dados do Setor de Tecnologia</h2>
+
+            <div class="grid-container-graficos">
+
+                <div class="item-grafico" data-grafico-id="1">
+                    <div class="container-grafico">
+                        <canvas id="grafico1"></canvas>
+                    </div>
+                    <div class="grafico-fonte">
+                        Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                    </div>
+                    <div class="descricao-oculta">
+                        <h3 class="titulo-oculto">Proporção de escolas com acesso a internet em Maceió</h3>
+                        <p class="texto-oculto">
+                            Este gráfico revela um dado crucial sobre a infraestrutura educacional de Maceió. Com 97,17% das escolas com acesso a internet, a gestão administrativa e o planejamento pedagógico são amplamente beneficiados. No entanto, os 2,83% de escolas sem acesso representam uma barreira de exclusão digital significativa.
+                        </p>
+                        <p class="fonte-texto-oculto">
+                            Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item-grafico" data-grafico-id="2">
+                    <div class="container-grafico">
+                        <canvas id="grafico2"></canvas>
+                    </div>
+                    <div class="grafico-fonte">
+                        Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                    </div>
+                    <div class="descricao-oculta">
+                        <h3 class="titulo-oculto">Acesso à Internet para Alunos em Maceió (2024)</h3>
+                        <p class="texto-oculto">
+                            O acesso à internet para uso dos alunos não é mais um luxo, e sim uma ferramenta pedagógica fundamental no século XXI. Este gráfico mostra o panorama em Maceió (2024), onde uma parcela das escolas já oferece essa conexão vital, abrindo portas para um universo de conhecimento. No entanto, é crucial que esse acesso seja mediado para garantir que a internet seja uma poderosa aliada do ensino.
+                        </p>
+                        <p class="fonte-texto-oculto">
+                            Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item-grafico" data-grafico-id="3">
+                    <div class="container-grafico">
+                        <canvas id="grafico3"></canvas>
+                    </div>
+                    <div class="grafico-fonte">
+                        Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                    </div>
+                    <div class="descricao-oculta">
+                        <h3 class="titulo-oculto">Alunos Matriculados por Rede de Ensino em Maceió (2024)</h3>
+                        <p class="texto-oculto">
+                            A distribuição de matrículas entre as redes de ensino é um indicador fundamental para o planejamento de políticas públicas em Maceió. Este gráfico de 2024 mostra que a rede privada concentra o maior número de alunos (77.410 em 301 escolas), seguida de perto pela rede municipal (58.721 em 158 escolas) e estadual (57.098 em 104 escolas).
+                        </p>
+                        <p class="fonte-texto-oculto">
+                            Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item-grafico" data-grafico-id="4">
+                    <div class="container-grafico">
+                        <canvas id="grafico4"></canvas>
+                    </div>
+                    <div class="grafico-fonte">
+                        Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                    </div>
+                    <div class="filtro-oculto">
+                        <button class="filtro-btn active" data-filtro="total">Total</button>
+                        <button class="filtro-btn" data-filtro="desktop">Desktops</button>
+                        <button class="filtro-btn" data-filtro="notebook">Notebooks</button>
+                    </div>
+                    <div class="descricao-oculta">
+                        <h3 class="titulo-oculto">Computadores por Rede de Ensino em Maceió (2024)</h3>
+                        <p class="texto-oculto">
+                            Este gráfico revela a grande disparidade na infraestrutura tecnológica entre as redes de ensino de Maceió. A rede privada concentra 3.773 computadores, um volume muito superior ao das redes públicas estadual (718) e municipal (404) somadas. Isso aponta para um 'fosso digital', impactando diretamente as oportunidades de aprendizado dos alunos. Contudo, para uma análise mais justa, o próximo gráfico mostrará a média de computadores por escola.
+                        </p>
+                        <p class="fonte-texto-oculto">
+                            Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="item-grafico" data-grafico-id="5">
+                    <div class="container-grafico">
+                        <canvas id="grafico5"></canvas>
+                    </div>
+                    <div class="grafico-fonte">
+                        Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                    </div>
+                    <div class="descricao-oculta">
+                        <h3 class="titulo-oculto">Média de Computadores por Escola (2024)</h3>
+                        <p class="texto-oculto">
+                            Se o gráfico anterior mostrou a quantidade total, este revela a distribuição real dos recursos. A análise da média de computadores por escola em Maceió (2024) inverte a perspectiva: a rede federal, com <strong>21.3 computadores por escola</strong>, desponta como a mais bem equipada, focada em um ensino mais intensivo em tecnologia.
+                            <br><br>
+                            A rede privada segue com uma média saudável de <strong>12.5 computadores</strong> por instituição. O ponto de maior atenção recai sobre as redes públicas que atendem a massa de alunos: a estadual, com uma média de <strong>6.9</strong>, e a municipal, com apenas <strong>2.5 computadores por escola</strong>. Este último número é especialmente crítico, indicando uma carência severa de infraestrutura tecnológica que pode limitar o aprendizado digital e aprofundar as desigualdades educacionais na cidade.
+                        </p>
+                        <p class="fonte-texto-oculto">
+                            Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item-grafico" data-grafico-id="6">
+                    <div class="container-grafico">
+                        <canvas id="grafico6"></canvas>
+                    </div>
+                    <div class="grafico-fonte">
+                        Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                    </div>
+                    <div class="descricao-oculta">
+                        <h3 class="titulo-oculto">Escolas com Internet para Alunos por Rede de Ensino (%)</h3>
+                        <p class="texto-oculto">
+                            Este gráfico finaliza nossa análise revelando um dos maiores desafios da educação em Maceió: a desigualdade no acesso à internet para uso direto dos alunos. A rede <strong>Federal</strong> (com 66,67% de suas escolas oferecendo acesso) e a <strong>Estadual</strong> (com 54,81%) demonstram um investimento mais consolidado nessa área.
+                            <br><br>
+                            Surpreendentemente, a rede <strong>Privada</strong>, com 39,87%, mostra que, embora possua muitos computadores, o acesso não é tão disseminado para os alunos quanto se poderia imaginar. O dado mais alarmante, contudo, está na rede <strong>Municipal</strong>: apenas <strong>16,46%</strong> de suas escolas fornecem internet para os estudantes. Considerando que esta é uma das maiores redes da cidade, esse número indica que a grande maioria dos alunos da rede municipal está à margem do aprendizado digital.
+                        </p>
+                        <p class="fonte-texto-oculto">
+                            Fonte: <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar" target="_blank">INEP/Censo Escolar (2024)</a>
+                        </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Sobre o Projeto</h4>
+                <p>
+                    Desenvolvido por: Bruno Rafael, Victor Hugo, Gabriella Maria, Emily Graziele, Chayenne Laiza e Janiele Alessandra.
+                </p>
+                <p class="academic-context">Projeto acadêmico para a disciplina de Web Coding...</p>
+            </div>
+            <div class="footer-column">
+                <h4>Navegação</h4>
+                <div class="footer-nav-container">
+                    <ul class="footer-nav-column">
+                        <li><a href="index.html">Ínicio</a></li>
+                        <li><a href="criadores.html">Criadores</a></li>
+                    </ul>
+                    <ul class="footer-nav-column">
+                        <li><a href="programacao.html">Programação</a></li>
+                        <li><a href="redes-sociais.html">Redes Sociais</a></li>
+                        <li><a href="design.html">Design</a></li>
+                        <li><a href="e-commerce.html">E-Commerce</a></li>
+                        <li><a href="direito.html">Direito</a></li>
+                        <li><a href="graficos.html">Gráficos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <p>© 2025 Guia de Tutoriais para Área Tecnológica | Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="graficos.js"></script>
+</body>
+
+</html>

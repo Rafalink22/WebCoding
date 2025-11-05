@@ -24,32 +24,14 @@ As seguintes tecnologias foram utilizadas na construção do projeto:
 * **CSS3:** Para a estilização, layout e design responsivo.
 * **JavaScript:** Para a interatividade e manipulação dinâmica dos cards na página principal. OBS: Javascript não faz parte do projeto, foi incluido apenas para dar interatividade aos cards de direcionamento das páginas.
 
-## 🚀 Como Executar o Projeto
-
-Como este é um projeto front-end estático, você pode visualizá-lo facilmente:
-
-1.  Clone este repositório para a sua máquina local:
-    ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    ```
-2.  Navegue até o diretório do projeto.
-3.  Abra o arquivo `index.html` no seu navegador de preferência.
-
-E pronto, o site estará rodando localmente!
-
-ou
-
-1. Acesse diretamente o link [ https://rafalink22.github.io/WebCoding/index.html ]
-E pronto, o site estará rodando na web!
-
 ## 👥 Integrantes
 
 * Bruno Rafael
-* Luiz Gustavo
+* Gabriella Maria
 * Victor Hugo
 * Emily Graziele
 * Chayenne Laiza
 * Janiele Alessandra
 
 ---
-_Projeto desenvolvido para fins acadêmicos na UNINASSAU - Maceió._
+Projeto desenvolvido para fins acadêmicos na UNINASSAU - Maceió._
