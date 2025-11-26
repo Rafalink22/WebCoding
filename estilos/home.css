@@ -142,35 +142,46 @@
    3. RESPONSIVIDADE (EXCLUSIVO HOME)
    ======================================== */
 @media (max-width: 768px) {
+    
     .slider-wrapper {
         width: 100%;
-        padding: 0;
-        overflow: hidden;
+        padding: 0; /* Remove padding lateral do wrapper */
+        margin-bottom: 50px;
     }
 
+    /* A "JANELA" DO SLIDER */
     .slider-container {
-        width: 85vw;
-        margin: 0 auto;
+        /* Define a largura exata da janela de visualização */
+        width: 90%; 
+        max-width: 350px; /* Trava para não ficar gigante */
+        margin: 0 auto; /* Centraliza a janela na tela */
+        overflow: hidden; /* Corta estritamente o que passar daqui */
     }
 
+    /* O CONTEÚDO (CARD) */
     .card {
-        width: 85vw; 
-        max-width: 340px;
-        margin: 30px 0;
+        /* O card deve ocupar 100% da janela definida acima */
+        width: 100%; 
+        
+        /* Removemos margens laterais para facilitar o cálculo do JS */
+        /* Usamos margin-top/bottom apenas */
+        margin: 20px 0; 
+        
         height: auto;
     }
 
+    /* Botões menores e ajustados */
     .slider-button {
         width: 40px;
         height: 40px;
-        top: 50%;
+        font-size: 18px;
     }
 
     .slider-button.prev {
-        left: 5px; /* Pequeno ajuste */
+        left: 5px;
     }
 
     .slider-button.next {
-        right: 5px; 
+        right: 5px;
     }
 }

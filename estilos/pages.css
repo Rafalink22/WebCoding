@@ -346,6 +346,16 @@ main p {
     list-style: none;
 }
 
+.lista-aplicacoes {
+    margin-top: 15px;
+    list-style: none;
+}
+
+.lista-beneficios {
+    margin-top: 15px;
+    list-style: none;
+}
+
 .lista-profissoes li {
     margin-bottom: 10px;
 }

@@ -1,6 +1,6 @@
-/* ========================================
-   1. ESTILOS GERAIS E RESET (GLOBAIS)
-   ======================================== */
+/* =================================================================
+   1. CONFIGURAÇÕES GERAIS E RESET (GLOBAL)
+   ================================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -19,9 +19,9 @@ body {
     background-color: #F4F4F9; 
 }
 
-/* ========================================
-   2. NAVEGAÇÃO (HEADER - GLOBAL)
-   ======================================== */
+/* =================================================================
+   2. CABEÇALHO E NAVEGAÇÃO (DESKTOP PADRÃO)
+   ================================================================= */
 header nav ul {
     display: flex;
     justify-content: center;
@@ -50,9 +50,73 @@ header nav a:hover {
     background-color: #f4f4f97c;
 }
 
-/* ========================================
-   3. COMPONENTES (BOTÕES - GLOBAIS)
-   ======================================== */
+/* =================================================================
+   3. MENU DROPDOWN (LÓGICA DESKTOP E ESTRUTURA)
+   ================================================================= */
+.dropdown {
+    position: relative; 
+}
+
+/* Estilo padrão do Dropdown (Escondido) */
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: #F4F4F9;
+    min-width: 400px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    z-index: 100; 
+    padding: 20px;
+    margin-top: 10px; 
+    border-bottom: 4px solid #88a5ab; 
+    
+    /* Layout interno do menu */
+    justify-content: center;
+    gap: 20px; 
+
+    /* Transição suave */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* No Desktop, abre ao passar o mouse (:hover) */
+.dropdown:hover .dropdown-content {
+    display: flex; 
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-column {
+    background-color: inherit; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Links dentro do Dropdown */
+.dropdown-content a {
+    color: #445a66; 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; 
+    text-align: left;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+}
+
+.dropdown-content a:hover {
+    background-color: #B8DBD9; 
+    color: #2f4550;
+}
+
+/* =================================================================
+   4. COMPONENTES DE UI (BOTÕES)
+   ================================================================= */
 .btn {
     background-color: #2F4550;
     color: #F4F4F9;
@@ -70,9 +134,9 @@ header nav a:hover {
     background-color: #3f3f3f;
 }
 
-/* ========================================
-   4. RODAPÉ (FOOTER - GLOBAL)
-   ======================================== */
+/* =================================================================
+   5. RODAPÉ (FOOTER)
+   ================================================================= */
 .site-footer {
     background-color: #b8dbd9;
     color: #000000;
@@ -124,21 +188,23 @@ header nav a:hover {
     margin-top: 10px;
 }
 
-.footer-nav {
+.footer-nav, .footer-nav-column {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-nav-column li {
     margin-bottom: 10px;
 }
 
-.footer-nav a {
+.footer-nav-column a {
     color: #445a66;
     text-decoration: none;
     transition: color 0.3s, padding-left 0.3s;
 }
 
-.footer-nav a:hover {
+.footer-nav-column a:hover {
     color: #F4F4F9;
     padding-left: 5px;
 }
@@ -159,91 +225,12 @@ header nav a:hover {
     flex-wrap: wrap; 
 }
 
-.footer-nav-column {
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-}
-
-.footer-nav-column a {
-    color: #445a66;
-    text-decoration: none;
-    transition: color 0.3s, padding-left 0.3s;
-}
-
-.footer-nav-column a:hover {
-    color: #F4F4F9;
-    padding-left: 5px;
-}
-
-.footer-nav-column li {
-    margin-bottom: 10px;
-}
-
-/* ========================================
-   5. MENU DROPDOWN (HEADER - GLOBAL)
-   ======================================== */
-.dropdown {
-    position: relative; 
-}
-
-.dropdown-content {
-    display: none; 
-    position: absolute; 
-    top: 100%; 
-    left: 50%;
-    transform: translateX(-50%); 
-    background-color: #F4F4F9;
-    min-width: 400px; 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-    border-radius: 8px;
-    z-index: 100; 
-    padding: 20px;
-    margin-top: 10px; 
-    border-bottom: 4px solid #88a5ab; 
-    
-    display: flex;
-    justify-content: center;
-    gap: 20px; 
-
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-    display: flex; 
-    visibility: visible;
-    opacity: 1;
-}
-
-.dropdown-column {
-    background-color: #F4F4F9;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown-content a {
-    color: #445a66; 
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block; 
-    text-align: left;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-    font-weight: 500;
-}
-
-.dropdown-content a:hover {
-    background-color: #B8DBD9; 
-    color: #2f4550;
-}
-
-/* ========================================
-   6. RESPONSIVIDADE (GLOBAL)
-   ======================================== */
+/* =================================================================
+   6. RESPONSIVIDADE (MOBILE & TABLET)
+   ================================================================= */
 @media (max-width: 768px) {
+    
+    /* --- Ajustes do Footer no Mobile --- */
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -259,49 +246,57 @@ header nav a:hover {
         transform: translateX(-50%);
     }
 
-    .dropdown-content {
-        min-width: 300px; 
-        flex-direction: column; 
-        left: 0;
-        transform: none;
-        position: fixed;
-        top: auto;
-        bottom: 0; 
-        width: 100%;
-        gap: 10px;
-    }
+    /* --- MENU MOBILE (Visual Clean/Padrão) --- */
     
-    header nav ul {
-        flex-wrap: wrap;
-    }
-}
-
-.dropdown.active .dropdown-content {
-    display: flex;
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Ajustes visuais para o menu aberto no celular */
-@media (max-width: 768px) {
     .dropdown.active .dropdown-content {
-        position: fixed; /* Fixa na tela */
-        bottom: 0;      /* Cola no fundo (estilo app moderno) */
-        top: auto;      /* Remove o posicionamento do topo */
+        /* Configuração Fixa (Overlay) */
+        position: fixed;
+        top: 0;        
         left: 0;
-        width: 100%;    /* Largura total */
+        width: 100%;   
+        height: auto;  
+        
+        /* CORES PADRÃO (Fundo Claro) */
+        background-color: #F4F4F9; 
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* Sombra suave */
+        
+        padding: 30px 20px;
+        z-index: 2000; 
+
+        /* Layout Interno */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0; /* Removi o gap para usar bordas nos itens */
+
+        /* Animação e Visibilidade */
+        visibility: visible;
+        opacity: 1;
         transform: none;
-        flex-direction: column; /* Itens um embaixo do outro */
-        max-height: 60vh; /* Máximo de 60% da altura da tela */
-        overflow-y: auto; /* Permite rolar se tiver muitos itens */
-        border-top: 5px solid #2F4550;
-        padding-bottom: 40px; /* Espaço para o dedo */
-        animation: slideUp 0.3s ease-out; /* Animação bonitinha */
+        
+        border-bottom: 4px solid #88a5ab; /* Borda colorida embaixo */
+        animation: slideDown 0.3s ease-out;
+    }
+
+    /* Links dentro do Menu Mobile (Texto Escuro) */
+    .dropdown.active .dropdown-content a {
+        color: #445a66; /* Texto Padrão */
+        font-size: 1.2em;
+        text-align: center;
+        width: 100%;
+        padding: 15px 0; /* Mais espaço para o dedo */
+        border-bottom: 1px solid #e0e0e0; /* Linha divisória cinza clara */
+    }
+
+    /* Hover no Mobile (Ao tocar) */
+    .dropdown.active .dropdown-content a:hover {
+        background-color: #B8DBD9; /* Fundo destaque padrão */
+        color: #2f4550; /* Texto escuro */
     }
 }
 
-/* Animação para o menu subir */
-@keyframes slideUp {
-    from { transform: translateY(100%); }
+/* Animação para o menu descer do topo */
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
     to { transform: translateY(0); }
 }
