@@ -145,12 +145,18 @@
     .slider-wrapper {
         width: 100%;
         padding: 0;
+        overflow: hidden;
+    }
+
+    .slider-container {
+        width: 85vw;
+        margin: 0 auto;
     }
 
     .card {
         width: 85vw; 
         max-width: 340px;
-        margin: 30px auto;
+        margin: 30px 0;
         height: auto;
     }
 

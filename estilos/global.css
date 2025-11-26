@@ -275,3 +275,33 @@ header nav a:hover {
         flex-wrap: wrap;
     }
 }
+
+.dropdown.active .dropdown-content {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Ajustes visuais para o menu aberto no celular */
+@media (max-width: 768px) {
+    .dropdown.active .dropdown-content {
+        position: fixed; /* Fixa na tela */
+        bottom: 0;      /* Cola no fundo (estilo app moderno) */
+        top: auto;      /* Remove o posicionamento do topo */
+        left: 0;
+        width: 100%;    /* Largura total */
+        transform: none;
+        flex-direction: column; /* Itens um embaixo do outro */
+        max-height: 60vh; /* Máximo de 60% da altura da tela */
+        overflow-y: auto; /* Permite rolar se tiver muitos itens */
+        border-top: 5px solid #2F4550;
+        padding-bottom: 40px; /* Espaço para o dedo */
+        animation: slideUp 0.3s ease-out; /* Animação bonitinha */
+    }
+}
+
+/* Animação para o menu subir */
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
