@@ -30,6 +30,11 @@
 .slider-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    cursor: grab; /* Mostra uma mãozinha aberta */
+}
+
+.slider-track:active {
+    cursor: grabbing; /* Mostra a mão fechada quando clica/segura */
 }
 
 .slider-button {

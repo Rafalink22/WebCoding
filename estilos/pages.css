@@ -162,16 +162,15 @@ main p {
 /* Container geral da seção */
 .secao-criadores {
     padding: 60px 20px;
-    max-width: 1200px; /* Um pouco mais largo para caber mais cards */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* A grade que organiza os cards */
 .grid-criadores {
     display: grid;
-    /* Cria colunas responsivas: no mínimo 250px, no máximo 1 fração do espaço */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px; /* Espaçamento entre os cards */
+    gap: 30px; 
 }
 
 /* O card individual do criador */
@@ -181,9 +180,9 @@ main p {
     padding: 30px 20px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border-top: 5px solid #b8dbd9; /* Detalhe com a cor do header/footer */
+    border-top: 5px solid #b8dbd9; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Para alinhar o conteúdo interno */
+    display: flex; 
     flex-direction: column;
     align-items: center;
 }
@@ -197,9 +196,9 @@ main p {
 .foto-perfil {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* A mágica para deixar a imagem redonda */
-    object-fit: cover; /* Garante que a foto não fique distorcida */
-    border: 4px solid #88a5ab; /* Borda com a cor de destaque */
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 4px solid #88a5ab; 
     margin-bottom: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -207,14 +206,14 @@ main p {
 /* Nome do criador */
 .nome-criador {
     font-size: 1.4em;
-    color: #2f4550; /* Cor principal de texto */
+    color: #2f4550; 
     margin-bottom: 8px;
 }
 
 /* Descrição do criador */
 .descricao-criador {
     font-size: 1em;
-    color: #555; /* Cor secundária de texto */
+    color: #555; 
     line-height: 1.5;
 }
 
@@ -235,4 +234,125 @@ main p {
 .container-texto-analise p {
     margin-bottom: 20px;
     line-height: 1.7;
+}
+
+/* ========================================
+   5. BANNER DE JOGOS (Game Dev)
+   ======================================== */
+.game-banner {
+    /* CAMINHO DA IMAGEM: CSS na pasta estilos, img na pasta img (sobe um nível) */
+    background-image: url('../img/banner-games.jpg'); 
+    
+    background-size: cover;      
+    background-position: center; 
+    background-attachment: fixed; /* Efeito Parallax */
+    
+    position: relative;
+    width: 100%;
+    min-height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.game-banner-overlay {
+    background: rgba(47, 69, 80, 0.90); 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+.game-content {
+    position: relative; 
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px;
+    color: #F4F4F9; 
+}
+
+.game-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #b8dbd9; 
+}
+
+.game-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0.9;
+    color: #fff;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    border-top: 3px solid #e0e0e0; 
+    padding-top: 30px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.stat-desc {
+    font-size: 0.9rem;
+    color: #b8dbd9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Responsividade do Banner */
+@media (max-width: 768px) {
+    .game-banner {
+        background-attachment: scroll; 
+        min-height: 400px;
+    }
+    .game-content h2 { font-size: 1.8rem; }
+    .game-stats { gap: 20px; }
+}
+
+/* ========================================
+   6. ESTILOS ESPECÍFICOS DE PROGRAMAÇÃO (Novos)
+   ======================================== */
+.card-destaque-games {
+    margin-top: 30px;
+    border-left: 5px solid #2F4550;
+}
+
+.lista-profissoes {
+    margin-top: 15px;
+    list-style: none; /* Remove a bolinha preta */
+}
+
+.lista-profissoes li {
+    margin-bottom: 10px;
+}
+
+.texto-conclusao {
+    margin-top: 20px;
 }
