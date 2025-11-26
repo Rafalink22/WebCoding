@@ -10,6 +10,7 @@ main h1, main h2, main h3, main h4 {
 main h1 {
     font-size: 2.8em;
     text-align: center;
+    word-wrap: break-word; 
 }
 
 main h2 {
@@ -30,6 +31,7 @@ main p {
     padding: 60px 20px;
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .fundo-alternativo {
@@ -153,27 +155,28 @@ main p {
     .grid-curiosidades {
         grid-template-columns: 1fr;
     }
+
+    .caixa-foco {
+        padding: 20px;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 20px 0px;
+    }
 }
 
 /* ========================================
    4. SEÇÃO CRIADORES (PÁGINA CRIADORES)
    ======================================== */
-
-/* Container geral da seção */
 .secao-criadores {
     padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* A grade que organiza os cards */
 .grid-criadores {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px; 
 }
 
-/* O card individual do criador */
 .card-criador {
     background-color: #fff;
     border-radius: 15px;
@@ -192,7 +195,6 @@ main p {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* A foto de perfil circular */
 .foto-perfil {
     width: 120px;
     height: 120px;
@@ -203,14 +205,12 @@ main p {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Nome do criador */
 .nome-criador {
     font-size: 1.4em;
     color: #2f4550; 
     margin-bottom: 8px;
 }
 
-/* Descrição do criador */
 .descricao-criador {
     font-size: 1em;
     color: #555; 
@@ -240,12 +240,10 @@ main p {
    5. BANNER DE JOGOS (Game Dev)
    ======================================== */
 .game-banner {
-    /* CAMINHO DA IMAGEM: CSS na pasta estilos, img na pasta img (sobe um nível) */
     background-image: url('../img/banner-games.jpg'); 
-    
     background-size: cover;      
     background-position: center; 
-    background-attachment: fixed; /* Efeito Parallax */
+    background-attachment: fixed; 
     
     position: relative;
     width: 100%;
@@ -326,7 +324,6 @@ main p {
     margin-top: 5px;
 }
 
-/* Responsividade do Banner */
 @media (max-width: 768px) {
     .game-banner {
         background-attachment: scroll; 
@@ -337,7 +334,7 @@ main p {
 }
 
 /* ========================================
-   6. ESTILOS ESPECÍFICOS DE PROGRAMAÇÃO (Novos)
+   6. ESTILOS ESPECÍFICOS DE PROGRAMAÇÃO
    ======================================== */
 .card-destaque-games {
     margin-top: 30px;
@@ -346,7 +343,7 @@ main p {
 
 .lista-profissoes {
     margin-top: 15px;
-    list-style: none; /* Remove a bolinha preta */
+    list-style: none;
 }
 
 .lista-profissoes li {

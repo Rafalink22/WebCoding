@@ -16,25 +16,28 @@
    ======================================== */
 .slider-wrapper {
     position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: auto;
     margin-bottom: 75px;
     padding: 0 40px;
+    overflow: hidden; 
 }
 
 .slider-container {
     overflow: hidden;
+    width: 100%;
 }
 
 .slider-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    cursor: grab; /* Mostra uma mãozinha aberta */
+    cursor: grab;
+    touch-action: pan-y; 
 }
 
 .slider-track:active {
-    cursor: grabbing; /* Mostra a mão fechada quando clica/segura */
+    cursor: grabbing;
 }
 
 .slider-button {
@@ -84,6 +87,18 @@
     text-align: center;
 }
 
+/* --- BLOQUEIO DE ARRASTO DE IMAGEM (IMPORTANTE) --- */
+.card img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.card a {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+/* -------------------------------------------------- */
+
 .card-content {
     flex-grow: 1;
     padding: 0 15px;
@@ -129,26 +144,27 @@
 @media (max-width: 768px) {
     .slider-wrapper {
         width: 100%;
-        padding: 0 10px;
+        padding: 0;
     }
 
     .card {
-        width: 90%;
-        margin: 30px 5%;
+        width: 85vw; 
+        max-width: 340px;
+        margin: 30px auto;
         height: auto;
     }
 
     .slider-button {
         width: 40px;
         height: 40px;
-        top: 40%;
+        top: 50%;
     }
 
     .slider-button.prev {
-        left: -5px;
+        left: 5px; /* Pequeno ajuste */
     }
 
     .slider-button.next {
-        right: -5px;
+        right: 5px; 
     }
 }
