@@ -70,7 +70,10 @@ header nav a:hover {
     border-radius: 8px;
     z-index: 100; 
     padding: 20px;
+    
+    /* Espaço visual entre o botão e o menu */
     margin-top: 10px; 
+    
     border-bottom: 4px solid #88a5ab; 
     
     /* Layout interno do menu */
@@ -82,6 +85,19 @@ header nav a:hover {
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
+/* --- A CORREÇÃO DO "BURACO" (PONTE INVISÍVEL) --- */
+/* Isso cria uma área transparente que conecta o botão ao menu */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Sobe para cobrir o buraco da margem */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Altura suficiente para conectar */
+    background: transparent; /* Invisível */
+}
+/* ------------------------------------------------ */
 
 /* No Desktop, abre ao passar o mouse (:hover) */
 .dropdown:hover .dropdown-content {
@@ -246,7 +262,7 @@ header nav a:hover {
         transform: translateX(-50%);
     }
 
-    /* --- MENU MOBILE (Visual Clean/Padrão) --- */
+    /* --- MENU MOBILE (Visual Clean com Overlay) --- */
     
     .dropdown.active .dropdown-content {
         /* Configuração Fixa (Overlay) */
@@ -256,9 +272,9 @@ header nav a:hover {
         width: 100%;   
         height: auto;  
         
-        /* CORES PADRÃO (Fundo Claro) */
+        /* CORES ORIGINAIS (Claras) */
         background-color: #F4F4F9; 
-        box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* Sombra suave */
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15); 
         
         padding: 30px 20px;
         z-index: 2000; 
@@ -267,31 +283,33 @@ header nav a:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0; /* Removi o gap para usar bordas nos itens */
+        gap: 0; 
 
-        /* Animação e Visibilidade */
+        /* Visibilidade */
         visibility: visible;
         opacity: 1;
         transform: none;
         
-        border-bottom: 4px solid #88a5ab; /* Borda colorida embaixo */
+        border-bottom: 4px solid #88a5ab; 
+        margin-top: 0; /* Remove a margem do desktop para colar no teto */
+        
         animation: slideDown 0.3s ease-out;
     }
 
-    /* Links dentro do Menu Mobile (Texto Escuro) */
+    /* Links dentro do Menu Mobile (Texto Padrão) */
     .dropdown.active .dropdown-content a {
-        color: #445a66; /* Texto Padrão */
+        color: #445a66; /* Cor original */
         font-size: 1.2em;
         text-align: center;
         width: 100%;
-        padding: 15px 0; /* Mais espaço para o dedo */
-        border-bottom: 1px solid #e0e0e0; /* Linha divisória cinza clara */
+        padding: 15px 0; 
+        border-bottom: 1px solid #e0e0e0; 
     }
 
-    /* Hover no Mobile (Ao tocar) */
+    /* Hover/Toque no Mobile */
     .dropdown.active .dropdown-content a:hover {
-        background-color: #B8DBD9; /* Fundo destaque padrão */
-        color: #2f4550; /* Texto escuro */
+        background-color: #B8DBD9; /* Cor original de hover */
+        color: #2f4550; 
     }
 }
 
